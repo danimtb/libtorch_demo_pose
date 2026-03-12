@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
-project(depth_demo)
+project(pose_estimation)
 
 # Buscar OpenCV
 find_package(OpenCV REQUIRED)
@@ -12,10 +12,10 @@ find_package(Torch REQUIRED)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(depth_demo main.cpp)
+add_executable(pose_estimation main.cpp)
 
 # Vincular las librerías
-target_link_libraries(depth_demo libtorch::libtorch opencv::opencv)
+target_link_libraries(pose_estimation libtorch::libtorch opencv::opencv)
 
 # Asegurar que CUDA esté habilitado
-set_property(TARGET depth_demo PROPERTY CUDA_STANDARD 14)
+set_property(TARGET pose_estimation PROPERTY CUDA_STANDARD 14)
